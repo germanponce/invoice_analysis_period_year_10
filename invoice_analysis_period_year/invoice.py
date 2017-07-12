@@ -48,7 +48,7 @@ class account_invoice(models.Model):
     def _get_fiscalyear_from_date(self):
         if self.date_invoice:
             date_invoice = self.date_invoice
-            year_fiscal = str(date_invoice)[0:-4]
+            year_fiscal = str(date_invoice)[0:4]
             period_fiscal = datetime.strptime(date_invoice, '%Y-%m-%d')
             period_fiscal = period_fiscal.strftime('%m/%Y')
             period_fiscal = str(period_fiscal)
